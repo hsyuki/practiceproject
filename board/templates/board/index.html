@@ -1,0 +1,16 @@
+<hrml>
+<h1>掲示板</h1>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="送信"/>
+</form><br>
+一覧:
+{% for message in messages %}
+{{ message.message }}<br>
+{% endfor %}
+</hrml>
+<!--
+  #% %で囲まれた部分がpython
+  #{{で囲まれた部分がrender関数で渡されたcontextのフィールド
+-->
